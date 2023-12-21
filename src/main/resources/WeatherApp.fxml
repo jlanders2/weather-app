@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.clanders.weatherapp.WeatherAppController">
+   <children>
+      <VBox prefWidth="100.0">
+         <children>
+            <Label text="Location">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="locationTextField" focusTraversable="false" onAction="#handleLocationEnteredAction" prefHeight="37.0" prefWidth="435.0" promptText="City, State" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </VBox>
+      <Label fx:id="cityNameLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="300.0" maxWidth="400.0" prefHeight="150.0" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </Label>
+      <VBox fx:id="forecastContainer" alignment="CENTER" prefHeight="100.0" prefWidth="447.0" visible="false">
+         <children>
+            <Label text="Today's Forecast" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="High" />
+                        <Label fx:id="locationHighLabel" />
+                     </children></VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Current" />
+                        <Label fx:id="locationCurrentLabel" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Low" />
+                        <Label fx:id="locationLowLabel" />
+                     </children></VBox>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </VBox>
+      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
+      <TextField fx:id="usersApiKeyTextField" focusTraversable="false" onAction="#handleApiKeyEnteredAction" promptText="API KEY" visible="false" />
+      <Label fx:id="userApiKeyMessageLabel" contentDisplay="CENTER" text="Using Custom API Key" visible="false" />
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>
